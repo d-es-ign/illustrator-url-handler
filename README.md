@@ -54,6 +54,5 @@ Then click the icon. It triggers the URL handler and opens the SVG in Illustrato
 
 ## Notes
 
-- `.env.local` and `IllustratorUrlHandler.app` are gitignored.
 - Source-of-truth handler logic is in:
   - `scripts/handler.applescript.template`
