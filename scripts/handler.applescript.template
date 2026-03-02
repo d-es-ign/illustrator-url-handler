@@ -1,0 +1,40 @@
+on run
+  return
+end run
+
+on open location theURL
+  try
+    set targetPath to my extractPath(theURL)
+    if targetPath is not "" then
+      do shell script "open -a " & quoted form of "__ILLUSTRATOR_APP_NAME__" & " " & quoted form of targetPath
+      tell application "__ILLUSTRATOR_APP_NAME__" to activate
+    end if
+  end try
+end open location
+
+on extractPath(theURL)
+  if theURL does not contain "path=" then
+    return ""
+  end if
+
+  set AppleScript's text item delimiters to "path="
+  set pathPart to text item 2 of theURL
+
+  if pathPart contains "&" then
+    set AppleScript's text item delimiters to "&"
+    set pathPart to text item 1 of pathPart
+  end if
+
+  set AppleScript's text item delimiters to ""
+  set decodedPath to do shell script "python3 -c 'import urllib.parse,sys;print(urllib.parse.unquote(sys.argv[1]))' " & quoted form of pathPart
+
+  if decodedPath does not start with "__ILLUSTRATOR_ALLOWED_BASE_PATH__/" then
+    return ""
+  end if
+
+  if decodedPath does not end with ".svg" then
+    return ""
+  end if
+
+  return decodedPath
+end extractPath
