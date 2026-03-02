@@ -1,25 +1,30 @@
 # Open Illustrator From Browser (macOS)
 
+![macOS](https://img.shields.io/badge/macOS-000000?style=for-the-badge&logo=apple&logoColor=white)
+![AppleScript](https://img.shields.io/badge/AppleScript-999999?style=for-the-badge&logo=apple&logoColor=white)
+![Adobe Illustrator](https://img.shields.io/badge/Adobe_Illustrator-330000?style=for-the-badge&logo=adobeillustrator&logoColor=FF9A00)
+![MIT License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)
+
 Small macOS helper that lets you open Adobe Illustrator from browser links via a custom URL protocol.
 
 ## Open Illustrator From Browser
 
 Use links like:
 
-`illustrator-open://open?path=/absolute/path/to/file.svg`
+`illustrator-open://open?path=/absolute/path/to/file.ai`
 
-to open local SVG files directly in Adobe Illustrator.
+to open local Illustrator-supported files directly in Adobe Illustrator.
 
 ## What It Does
 
 - Registers `illustrator-open://` URL scheme.
 - Accepts URLs in the form:
-  - `illustrator-open://open?path=/absolute/path/to/file.svg`
-- Opens the SVG in Illustrator and brings Illustrator to the foreground.
+  - `illustrator-open://open?path=/absolute/path/to/file.ai`
+- Opens the file in Illustrator and brings Illustrator to the foreground.
 
 ## Security Guards
 
-- Only paths ending in `.svg` are accepted.
+- Only paths ending in `.svg`, `.pdf`, `.ai`, or `.eps` are accepted.
 - Only paths under your configured base directory are accepted.
 
 ## Setup
@@ -33,7 +38,7 @@ cp .env.example .env.local
 2. Edit `.env.local`:
 
 - `ILLUSTRATOR_APP_NAME` - usually `Adobe Illustrator`
-- `ILLUSTRATOR_ALLOWED_BASE_PATH` - absolute allowlisted folder for SVGs
+- `ILLUSTRATOR_ALLOWED_BASE_PATH` - absolute allowlisted folder for your artwork files
 - `ILLUSTRATOR_URL_SCHEME` - default `illustrator-open`
 
 ## Build and Register
@@ -58,7 +63,7 @@ Open:
 open example/index.html
 ```
 
-Then click the icon. It triggers the URL handler and opens the SVG in Illustrator.
+Then click the icon. It triggers the URL handler and opens the file in Illustrator.
 
 Source-of-truth handler logic is in `scripts/handler.applescript.template`.
 

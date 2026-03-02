@@ -27,12 +27,13 @@ on extractPath(theURL)
 
   set AppleScript's text item delimiters to ""
   set decodedPath to do shell script "python3 -c 'import urllib.parse,sys;print(urllib.parse.unquote(sys.argv[1]))' " & quoted form of pathPart
+  set lowercasePath to do shell script "python3 -c 'import sys;print(sys.argv[1].lower())' " & quoted form of decodedPath
 
   if decodedPath does not start with "__ILLUSTRATOR_ALLOWED_BASE_PATH__/" then
     return ""
   end if
 
-  if decodedPath does not end with ".svg" then
+  if lowercasePath does not end with ".svg" and lowercasePath does not end with ".pdf" and lowercasePath does not end with ".ai" and lowercasePath does not end with ".eps" then
     return ""
   end if
 
