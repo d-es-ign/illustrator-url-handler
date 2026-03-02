@@ -3,7 +3,9 @@
 ![macOS](https://img.shields.io/badge/macOS-000000?style=for-the-badge&logo=apple&logoColor=white)
 ![AppleScript](https://img.shields.io/badge/AppleScript-999999?style=for-the-badge&logo=apple&logoColor=white)
 ![Adobe Illustrator](https://img.shields.io/badge/Adobe_Illustrator-330000?style=for-the-badge&logo=adobeillustrator&logoColor=FF9A00)
-![MIT License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)
+![SVG](https://img.shields.io/badge/SVG-FFB13B?style=for-the-badge&logo=svg&logoColor=white)
+![Browser Integration](https://img.shields.io/badge/Browser_Integration-1E293B?style=for-the-badge)
+![License: MIT](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)
 
 Small macOS helper that lets you open Adobe Illustrator from browser links via a custom URL protocol.
 
