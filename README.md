@@ -1,6 +1,14 @@
-# Illustrator URL Handler
+# Open Illustrator From Browser (macOS)
 
-Small macOS helper that registers a custom URL scheme and opens SVG files in Adobe Illustrator.
+Small macOS helper that lets you open Adobe Illustrator from browser links via a custom URL protocol.
+
+## Open Illustrator From Browser
+
+Use links like:
+
+`illustrator-open://open?path=/absolute/path/to/file.svg`
+
+to open local SVG files directly in Adobe Illustrator.
 
 ## What It Does
 
@@ -53,3 +61,7 @@ open example/index.html
 Then click the icon. It triggers the URL handler and opens the SVG in Illustrator.
 
 Source-of-truth handler logic is in `scripts/handler.applescript.template`.
+
+## License
+
+MIT.
