@@ -52,7 +52,4 @@ open example/index.html
 
 Then click the icon. It triggers the URL handler and opens the SVG in Illustrator.
 
-## Notes
-
-- Source-of-truth handler logic is in:
-  - `scripts/handler.applescript.template`
+Source-of-truth handler logic is in `scripts/handler.applescript.template`.
